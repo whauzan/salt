@@ -1,0 +1,17 @@
+<div class="bg-primary flex flex-col justify-end p-2 text-background font-medium" [class]="isFirst ? 'h-full' : 'h-40'">
+    <div *ngIf="isFirst">
+        <h3 class="text-xl">{{type !== 'people' ? title : author}}</h3>
+        <div class="flex justify-between text-sm">
+            <p>{{type === 'people' ? title : type === 'document' ? "By " + author : author}}</p>
+            <p>{{views}} views</p>
+        </div>
+    </div>
+
+    <div *ngIf="!isFirst">
+        <h3 *ngIf="type === 'document'" class="text-sm">{{title}}</h3>
+        <div class="flex justify-between text-sm">
+            <p *ngIf="type !== 'document'">{{author}}</p>
+            <p *ngIf="type !== 'people'">{{views}} views</p>
+        </div>
+    </div>
+</div>

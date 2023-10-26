@@ -43,6 +43,12 @@
                   "maximumError": "4kb"
                 }
               ],
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environtment.ts",
+                  "with": "src/environments/environtment.prod.ts"
+                }
+              ],
               "outputHashing": "all"
             },
             "development": {
